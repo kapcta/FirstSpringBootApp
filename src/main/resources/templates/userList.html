@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User list</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr th:each="el : ${users}" class="alert alert-info mt-2 ">
+                <td th:text="${{el.username}}"></td>
+                <tr th: each="role, itemStat : *{roles}">
+                    <td th:text="${*{roles[__${itemStat.index}__]} /"></td>
+                </tr>
+            </tr>
+        </div>
+    </tbody>
+</table>
+
+</body>
+</html>
